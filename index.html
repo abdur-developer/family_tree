@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Old Genaration</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        <style>
+            body {
+                margin: 30px;
+                font-family: sans-serif;
+            }
+            #my_div{
+                margin-top: 100px;
+            }
+            #fontSizeWrapper { font-size: 16px; margin-top: 15px;}
+
+            #fontSize {
+                width: 100px;
+                font-size: 1em;
+            }
+
+            /* ————————————————————–
+            Tree core styles
+            */
+            .tree { margin: 1em; }
+
+            .tree input {
+                position: absolute;
+                clip: rect(0, 0, 0, 0);
+            }
+
+            .tree input ~ ul { display: none; }
+
+            .tree input:checked ~ ul { display: block; }
+
+            /* ————————————————————–
+            Tree rows
+            */
+            .tree li {
+                line-height: 1.2;
+                position: relative;
+                padding: 0 0 1em 1em;
+            }
+
+            .tree ul li { padding: 1em 0 0 1em; }
+
+            .tree > li:last-child { padding-bottom: 0; }
+
+            /* ————————————————————–
+            Tree labels
+            */
+            label {
+                position: relative;
+                display: inline-block;
+                background: #fff;
+				cursor: pointer;
+			}
+
+            label:hover { color: #666; }
+
+            /* ————————————————————–
+            Tree expanded icon
+            */
+            label:before {
+                background: #000;
+                color: #fff;
+                position: relative;
+                z-index: 1;
+                float: left;
+                margin: 0 1em 0 -2em;
+                width: 1em;
+                height: 1em;
+                border-radius: 1em;
+                content: '+';
+                text-align: center;
+                line-height: .9em;
+            }
+
+            :checked ~ label:before { content: '–'; }
+
+            /* ————————————————————–
+            Tree branches
+            */
+            .tree li:before {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: -.5em;
+                display: block;
+                width: 0;
+                border-left: 1px solid #777;
+                content: "";
+            }
+
+            label:after {
+                position: absolute;
+                top: 0;
+                left: -1.5em;
+                display: block;
+                height: 0.5em;
+                width: 1em;
+                border-bottom: 1px solid #777;
+                border-left: 1px solid #777;
+                border-radius: 0 0 0 .3em;
+                content: '';
+            }
+
+            label:after { border-bottom: 0; }
+
+            :checked ~ label:after {
+                border-radius: 0 .3em 0 0;
+                border-top: 1px solid #777;
+                border-right: 1px solid #777;
+                border-bottom: 0;
+                border-left: 0;
+                bottom: 0;
+                top: 0.5em;
+                height: auto;
+            }
+
+            .tree li:last-child:before {
+                height: 1em;
+                bottom: auto;
+            }
+
+            .tree > li:last-child:before { display: none; }
+
+            .tree_custom {
+                display: block;
+                background: #eee;
+                padding: 1em;
+                border-radius: 0.3em;
+            }
+            .head_text{
+                text-align: center;
+                margin: 10px;
+                padding: 10px;
+                color: green;
+                border-bottom: 1px solid green;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="my_div">
+            <h2 class="head_text">বংশের লতা</h2>
+            <ul class="tree" id="my_tree">
+                <li>
+                    <input id='c0'>
+					<label for='c0'>প্রভাতী মন্ডল</label>
+                    <ul>
+                        <li>
+                            <input id="c1" />
+                            <label for="c1">রবিউল মন্ডল</label>
+							<ul>
+								<li>
+									<input id='c2'/>
+									<label for='c2'>মেহার সরকার</label>
+                                    <ul>
+                                        <li>
+                                            <input id='c3'/>
+                                            <label for='c3'>বশীর উদ্দিন শেখ</label>
+                                            <ul>
+                                                <li>
+                                                    <input id='c4'/>
+                                                    <label for='c4'>আনসার আলী</label>
+                                                    <ul>
+                                                        <li>
+                                                            <input id="d2"/>
+                                                            <label for="d2">শাহাজালাল</label>
+                                                            <ul>
+                                                                <li>
+                                                                    <!-- <input id='d4'/> -->
+                                                                    <label for='d4'>গোলাম কিবরিয়া</label>
+                                                                </li>
+                                                                <li>
+                                                                    <!-- <input id='d5'/> -->
+                                                                    <label for='d5'>আব্দুর রহমান</label>
+                                                                </li>
+                                                                <li>
+                                                                    <input id='d6'/>
+                                                                    <label for='d6'>খাদিজা</label>
+                                                                    <ul>
+                                                                        <li>
+                                                                            <label for="e0">ফাহিম</label>
+                                                                        </li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li>
+                                                                    <!-- <input id='d7'/> -->
+                                                                    <label for='d7'>আয়সা</label>
+                                                                </li>
+                                                                <li>
+                                                                    <!-- <input id='d8'/> -->
+                                                                    <label for='d8'>আব্দুল হামিদ</label>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <input id="d3"/>
+                                                            <label for="d3">আঞ্জুমালা</label>
+                                                            <ul>
+                                                                <li>
+                                                                    <!-- <input id='d9'/> -->
+                                                                    <label for='d9'>গোলাম আজম</label>
+                                                                </li>
+                                                                <li>
+                                                                    <!-- <input id='e1'/> -->
+                                                                    <label for='e1'>জামেনা</label>
+                                                                </li>
+                                                                <li>
+                                                                    <!-- <input id='e2'/> -->
+                                                                    <label for='e2'>আমেনা</label>
+                                                                </li>
+                                                                <li>
+                                                                    <!-- <input id='e3'/> -->
+                                                                    <label for='e3'>আলামিন</label>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <input id='c5'/>
+                                                    <label for='c5'>আনার আলী</label>
+                                                    <ul>
+                                                        <li>
+                                                            <!-- <input id='e4'/> -->
+                                                            <label for='e4'>আনিসা</label>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <input id='c6'/>
+                                                    <label for='c6'>মসম আলী</label>
+                                                    <ul>
+                                                        <li>
+                                                            <label for='e5'>ওমর আলী</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for='e6'>সুরুজ আলী</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for='e7'>সাদেক আলী</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for='e8'>সিরাজল</label>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <input id='c7'/>
+                                                    <label for='c7'>কসম আলী</label>
+                                                    <ul>
+                                                        <li>
+                                                            <input id="e9">
+                                                            <label for='e9'>মন্টু</label>
+                                                            <ul>
+                                                                <li><label for="f3">ঈদু</label></li>
+                                                                <li><label for="f4">জাকিরুল</label></li>
+                                                                <li><label for="f5">মুন্নি</label></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <label for='f0'>কাজিবর</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for='f1'>দুলাল</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for='f2'>কুসুমা</label>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <input id='c8'/>
+                                                    <label for='c8'>নসম উদ্দিন</label>
+                                                    <ul>
+                                                        <li>
+                                                            <input id="f6">
+                                                            <label for="f6">বিডল</label>
+                                                            <ul>
+                                                                <li>
+                                                                    <label for="g2">জহুরুল</label>
+                                                                </li>
+                                                                <li>
+                                                                    <label for="g3">রাসিদুল</label>
+                                                                </li>
+                                                                <li>
+                                                                    <label for="g4">রবিউল</label>
+                                                                </li>
+                                                                <li>
+                                                                    <label for="g5">biuty</label>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li>
+                                                            <label for="f7">আইবি খাতুন</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="f8">আছি খাতুন</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="f9">রাসেদা</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="g0">সাহিদা</label>
+                                                        </li>
+                                                        <li>
+                                                            <label for="g1">সাহেরা</label>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <input id='c9'/>
+                                                    <label for='c9'>ছলিম উদ্দিন</label>
+                                                    <ul>
+                                                        <li><label for="g6">ছলেমা</label></li>
+                                                        <li><label for="g7">সুলমান</label></li>
+                                                        <li><label for="g8">দুলাল</label></li>
+                                                        <li><label for="g9">আলাল</label></li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <input id='d1'/>
+                                                    <label for='d1'>ময়সান আলী</label>
+                                                    <ul>
+                                                        <li><label for="h0">ফজলু</label></li>
+                                                        <li><label for="h1">সহিদুল</label></li>
+                                                        <li><label for="h2">মহেসেনা</label></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+								</li>
+							</ul>
+						</li>
+                    </ul>
+                </li>                
+            </ul>
+        </div>
+        <script>
+            const checkboxes = document.querySelectorAll('input');
+			checkboxes.forEach(checkbox => {
+				checkbox.type = "checkbox";
+				checkbox.checked = true;
+			});
+
+        </script>
+    </body>
+</html>
